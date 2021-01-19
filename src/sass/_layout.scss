@@ -1,0 +1,22 @@
+.container {
+  background-color: var(--color-grey);
+  min-height: 100vh;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  height: 7rem;
+  background-color: var(--color-black);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  flex: 1;
+  position: relative;
+}

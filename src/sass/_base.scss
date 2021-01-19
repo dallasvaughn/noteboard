@@ -1,0 +1,35 @@
+:root {
+  --color-black: #222831;
+  --color-blue: #30475e;
+  --color-red: #f05454;
+  --color-grey: #e8e8e8;
+
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.8);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+$bp-largest: 68.75em; // 1100px
+$bp-medium: 43.75em; // 700px
+$bp-small: 41.125em; // 658px
+$bp-smallest: 21.875em; // 350px
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}

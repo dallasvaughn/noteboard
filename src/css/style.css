@@ -1,0 +1,197 @@
+:root {
+  --color-black: #222831;
+  --color-blue: #30475e;
+  --color-red: #f05454;
+  --color-grey: #e8e8e8;
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.8);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.2); }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; }
+
+.container {
+  background-color: var(--color-grey);
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column; }
+
+.header {
+  height: 7rem;
+  background-color: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.content {
+  flex: 1;
+  position: relative; }
+
+.title {
+  font-size: 4rem;
+  color: #fff; }
+
+.modal-button {
+  font-size: 5rem;
+  font-weight: 400;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  height: 5rem;
+  width: 5rem;
+  background-color: var(--color-red);
+  border-radius: 100px;
+  box-shadow: var(--shadow-dark);
+  transition: all 0.2s;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .modal-button:hover {
+    cursor: pointer;
+    transform: scale(1.2); }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 10rem;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  animation-name: modalIn;
+  animation-duration: 0.4s; }
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 27%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  justify-content: center; }
+  @media only screen and (max-width: 68.75em) {
+    .modal-content {
+      width: 50%; } }
+  @media only screen and (max-width: 43.75em) {
+    .modal-content {
+      width: 80%; } }
+  .modal-content__close {
+    font-size: 3.6rem;
+    height: 4rem;
+    width: 4rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem; }
+    .modal-content__close:hover {
+      cursor: pointer;
+      color: #777; }
+  .modal-content__note {
+    flex: 1;
+    margin-top: 5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .modal-content__note-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      padding: 1rem;
+      height: 4rem;
+      width: 80%;
+      margin-bottom: 1.5rem; }
+      .modal-content__note-title:focus {
+        outline: none; }
+    .modal-content__note-body {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      width: 80%;
+      height: 20rem;
+      resize: none; }
+      .modal-content__note-body:focus {
+        outline: none; }
+    .modal-content__note-button {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 400;
+      padding: 1rem;
+      border: none;
+      border-radius: 100px;
+      background-color: var(--color-red);
+      margin-bottom: 2rem;
+      transition: all 0.2s; }
+      .modal-content__note-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        cursor: pointer; }
+      .modal-content__note-button:active {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+
+@keyframes modalIn {
+  0% {
+    transform: scaleX(0); }
+  100% {
+    transform: scaleX(1); } }
+
+.note-list {
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap; }
+  @media only screen and (max-width: 41.125em) {
+    .note-list {
+      flex-direction: column;
+      align-items: center; } }
+
+.note {
+  font-size: 2rem;
+  height: 25rem;
+  width: 30rem;
+  background-color: #bebebe;
+  padding: 1.5rem;
+  margin: 1rem 1rem;
+  position: relative; }
+  @media only screen and (max-width: 21.875em) {
+    .note {
+      height: 20rem;
+      width: 25rem; } }
+  .note__delete {
+    font-size: 4rem;
+    color: var(--color-red);
+    position: absolute;
+    top: 0;
+    right: 1rem; }
+    .note__delete:hover {
+      cursor: pointer;
+      color: #8b0000; }
+  .note__title {
+    border-bottom: 1px solid black;
+    margin-bottom: 1rem; }
+  .note__body {
+    height: 80%;
+    overflow: auto; }
